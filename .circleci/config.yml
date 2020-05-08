@@ -9,9 +9,9 @@ jobs:
       - checkout
       - node/with-cache:
           steps:
-            - run: yarn
-            - run: yarn build
+            - run: npm i
+            - run: npm run build
 workflows:
-    build-and-test:
-      jobs:
-        - build
+  build-and-test:
+    jobs:
+      - build

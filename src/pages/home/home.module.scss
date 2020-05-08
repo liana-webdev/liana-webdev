@@ -1,3 +1,21 @@
+@import '~bootstrap/scss/bootstrap';
 .main {
-   color: red;
+  color: red;
+}
+@media (max-width: 600px) {
+  .card-subtitle {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .card-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 320px) {
+  .who {
+    font-size: 40px;
+  }
 }

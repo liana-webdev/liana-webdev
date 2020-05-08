@@ -7,7 +7,7 @@ import find from 'find';
 const Parser = require('i18next-scanner').Parser;
 
 const SOURCE = path.join(__dirname, '../src');
-const LOCALES_DIR = path.join(__dirname, '../public/locales');
+const LOCALES_DIR = path.join(__dirname, '../assets/locales');
 const RU_PATH = path.join(LOCALES_DIR, 'ru/translation.json');
 const EN_PATH = path.join(LOCALES_DIR, 'en/translation.json');
 const FILE_REGEX = /\.tsx?$/;
