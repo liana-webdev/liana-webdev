@@ -1,0 +1,45 @@
+{
+   "parser": "@typescript-eslint/parser",
+   "extends": [
+      "prettier",
+      "react-app",
+      "plugin:import/typescript"
+   ],
+   "plugins": [
+      "prettier",
+      "jsx-a11y",
+      "flowtype",
+      "react",
+      "import",
+      "react-hooks"
+   ],
+   "parserOptions": {
+      "ecmaVersion": 11,
+      "sourceType": "module",
+      "ecmaFeatures": {
+         "jsx": true
+      }
+   },
+   "settings": {
+      "react": {
+         "version": "detect"
+      }
+   },
+   "rules": {
+      "prettier/prettier": "error",
+      "import/order": [
+         "error",
+         {
+            "groups": [
+               "builtin",
+               "external",
+               "internal",
+               "parent",
+               "sibling",
+               "index"
+            ],
+            "newlines-between": "always"
+         }
+      ]
+   }
+}

@@ -1,0 +1,41 @@
+{
+   "compilerOptions": {
+      "strictNullChecks": true,
+      "strict": true,
+      "module": "commonjs",
+      "target": "ES2019",
+      "jsx": "react",
+      "lib": [
+         "dom",
+         "esnext"
+      ],
+      "moduleResolution": "node",
+      "baseUrl": ".",
+      "resolveJsonModule": true,
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      "skipLibCheck": true,
+      "outDir": "./dist/",
+      "noEmit": true,
+      "inlineSourceMap": false,
+      "sourceMap": true,
+      "skipDefaultLibCheck": true,
+      "importHelpers": true,
+      "allowJs": false,
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "paths": {
+         "@*": [
+            "./*"
+         ],
+      },
+      "plugins": [
+         {
+            "name": "typescript-plugin-css-modules"
+         }
+      ]
+   },
+   "exclude": [
+      "node_modules"
+   ]
+}
