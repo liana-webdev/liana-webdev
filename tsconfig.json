@@ -25,9 +25,12 @@
       "emitDecoratorMetadata": true,
       "experimentalDecorators": true,
       "paths": {
-         "@*": [
+         "@/*": [
             "./*"
          ],
+         "assets/*": [
+            "./assets/*"
+         ]
       },
       "plugins": [
          {
