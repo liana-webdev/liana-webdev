@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "strictNullChecks": true,
+    "strict": true,
+    "module": "commonjs",
+    "target": "ES2019",
+    "jsx": "react",
+    "lib": ["dom", "esnext"],
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "outDir": "./dist/",
+    "inlineSourceMap": false,
+    "sourceMap": true,
+    "skipDefaultLibCheck": true,
+    "importHelpers": true,
+    "allowJs": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "paths": {
+      "@/*": ["./*"],
+      "assets/*": ["./assets/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}
