@@ -4,6 +4,7 @@ import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const config: webpack.Configuration = {
   mode: 'development',
   devtool: 'inline-source-map',
@@ -57,7 +58,12 @@ const config: webpack.Configuration = {
     }),
   ],
   resolve: {
-    extensions: ['.tsx', '.ts', '.js', '.jsx'],
+    extensions: ['.tsx', '.ts', '.js', '.jsx', '.scss'],
+    plugins: [
+      new TsconfigPathsPlugin({
+        configFile: './tsconfig.json',
+      }),
+    ],
   },
   output: {
     filename: '[name].js',
