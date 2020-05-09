@@ -1,17 +1,16 @@
-import React, { ComponentProps } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import i18n from '@/src/i18n';
 import './home.scss';
 import { Link } from 'react-router-dom';
 import Routes from '@/src/Routes';
-type HomePageProps = {} & ComponentProps<'div'>;
 export default function HomePage() {
   const { t } = useTranslation();
   return (
     <>
       <div className="lang container text-center mt-2">
-        <a onClick={() => i18n.changeLanguage('ru')}>Русский</a>
-        <a onClick={() => i18n.changeLanguage('en')}>English</a>
+        <div onClick={() => i18n.changeLanguage('ru')}>Русский</div>
+        <div onClick={() => i18n.changeLanguage('en')}>English</div>
       </div>
       <div className="motion">
         <div id="main" className="container">

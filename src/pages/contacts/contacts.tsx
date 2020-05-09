@@ -4,6 +4,6 @@ import './contacts.scss';
 
 type ContactsPageProps = {} & ComponentProps<'div'>;
 
-export default function ContactsPage({}: ContactsPageProps) {
-  return <div>Home page</div>;
+export default function ContactsPage() {
+  return <div>Contacts page</div>;
 }

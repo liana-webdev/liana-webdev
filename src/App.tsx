@@ -10,9 +10,9 @@ import './i18n';
 export default function App() {
   return (
     <Suspense fallback="Загрузка">
-      <HashRouter>
+      <HashRouter hashType="slash">
         <Switch>
-          <Route path={Routes.INDEX} component={HomePage} />
+          <Route exact path={Routes.INDEX} component={HomePage} />
           <Route exact path={Routes.WORK} component={WorkPage} />
           <Route exact path={Routes.CONTACT} component={ContactsPage} />
         </Switch>

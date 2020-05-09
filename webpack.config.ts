@@ -44,7 +44,9 @@ const config: webpack.Configuration = {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin({}),
+    new CleanWebpackPlugin({
+      cleanStaleWebpackAssets: false,
+    }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './assets/index.html',
