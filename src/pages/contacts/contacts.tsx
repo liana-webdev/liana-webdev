@@ -1,9 +1,9 @@
 import React, { ComponentProps } from 'react';
 
-import styles from './contacts.module.scss';
+import './contacts.scss';
 
 type ContactsPageProps = {} & ComponentProps<'div'>;
 
 export default function ContactsPage({}: ContactsPageProps) {
-  return <div className={styles.main}>Home page</div>;
+  return <div>Home page</div>;
 }

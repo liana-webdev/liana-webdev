@@ -3,7 +3,7 @@ import path from 'path';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 const config: webpack.Configuration = {
   mode: 'development',
   devtool: 'inline-source-map',
@@ -20,14 +20,12 @@ const config: webpack.Configuration = {
       {
         test: /\.(s)?css$/,
         use: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
               importLoaders: 1,
-              modules: {
-                localIdentName: '[local]-[hash:base64:5]',
-              },
+              esModule: true,
             },
           },
           'sass-loader',
@@ -35,15 +33,7 @@ const config: webpack.Configuration = {
       },
       {
         test: /\.ts(x)?$/,
-        use: [
-          {
-            loader: 'ts-loader',
-            options: {
-              transpileOnly: true,
-              configFile: '../tsconfig.json',
-            },
-          },
-        ],
+        use: ['ts-loader'],
         exclude: /node_modules/,
       },
       {
@@ -53,13 +43,17 @@ const config: webpack.Configuration = {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin({
-      cleanStaleWebpackAssets: false,
-    }),
+    new CleanWebpackPlugin({}),
     new HtmlWebpackPlugin({
-      filename: 'main.html',
+      filename: 'index.html',
       template: './assets/index.html',
       chunks: ['main'],
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      esModule: true,
+      chunkFilename: '[id].css',
+      ignoreOrder: false, // Enable to remove warnings about conflicting order
     }),
   ],
   resolve: {
@@ -69,12 +63,6 @@ const config: webpack.Configuration = {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
     pathinfo: false,
-  },
-  optimization: {
-    splitChunks: {
-      name: 'vendor',
-      chunks: 'initial',
-    },
   },
 };
 export default config;

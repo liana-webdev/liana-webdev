@@ -1,7 +1,7 @@
 import React, { ComponentProps } from 'react';
 
-import styles from './work.module.scss';
+import './work.scss';
 type WorkPageProps = {} & ComponentProps<'div'>;
 export default function WorkPage({}: WorkPageProps) {
-  return <div className={styles.main}>Home page</div>;
+  return <div>Home page</div>;
 }
