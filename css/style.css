@@ -78,6 +78,10 @@ li {
   padding-bottom: 60px;
 }
 
+ul {
+  padding-left: 0px;
+}
+
 /* Smooth Zoom Effect on Hover */
 .zoom-box {
   transition: transform 0.5s;
